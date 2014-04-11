@@ -15,19 +15,18 @@ class Game < ActiveRecord::Base
   end
 
   def guesses
-    all = ('A'..'Z').to_a
-    all - guessed
+    ('A'..'Z').to_a - guessed
   end
 
   def guessed
-    letters.upcase.split("")
+    normalize(letters)
   end
 
   def splitted_word
-    word.upcase.split("")
+    normalize(word)
   end
 
-  def loose?
+  def lose?
     stage >= CHANCES
   end
 
@@ -35,7 +34,12 @@ class Game < ActiveRecord::Base
     unique(word) == unique(letters)
   end
 
+  private
   def unique(str)
-    str.upcase.split("").uniq.sort
+    normalize(str).uniq.sort
+  end
+
+  def normalize(str)
+    str.upcase.split("")
   end
 end

@@ -16,7 +16,7 @@ class GamesController < ApplicationController
   end
 
   def guess
-    return redirect_to @game, notice: 'Você perdeu o jogo' if @game.loose?
+    return redirect_to @game, notice: 'Você perdeu o jogo' if @game.lose?
     letter = params[:letter]
     if @game.guessed? letter
       redirect_to @game, notice: 'Você já tentou essa letra'
