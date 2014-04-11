@@ -43,7 +43,7 @@ Escolhar uma letra:
 <br />
 
 <% @game.guesses.each do |letter| %>
-  <%= button_to letter, guess_game_path(@game, letter: letter), style: 'float: left', method: :patch %>
+  <%= button_to letter, guess_game_path(@game, letter: letter), style: 'float: left', method: :patch, disabled: @game.win? %>
 <% end %>
 
 <br />
