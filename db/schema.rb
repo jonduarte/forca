@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140411195509) do
+ActiveRecord::Schema.define(version: 20140411201253) do
 
   create_table "games", force: true do |t|
     t.integer  "chances",    default: 0
     t.string   "word"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "letters",    default: ""
   end
 
 end

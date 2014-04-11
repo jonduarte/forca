@@ -1,14 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Chances:</strong>
-  <%= @game.chances %>
-</p>
+Fase:
+<%= @game.stage %>
 
-<p>
-  <strong>Word:</strong>
-  <%= @game.word %>
-</p>
+<br />
+<br />
+
+<%= " _ " * @game.word.size %>
+
+<% if @game.letters.present? %>
+<br />
+<br />
+
+Already guessed:
+<br />
+
+<% @game.guessed.each do |letter| %>
+  <button disabled="disabled"><%= letter %></button>
+<% end %>
+
+<% end %>
+
+<br />
+<br />
+
+Take a guess:
+<br />
+
+<% @game.guesses.each do |letter| %>
+  <%= button_to letter, guess_game_path(@game, letter: letter), style: 'float: left', method: :patch, disabled: @game.guessed?(letter) %>
+<% end %>
+
+<br />
+<br />
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
