@@ -1,6 +1,8 @@
 class Game < ActiveRecord::Base
   CHANCES = 7
 
+  validates_presence_of :word
+
   def stage
     (unique(letters) - unique(word)).size
   end
