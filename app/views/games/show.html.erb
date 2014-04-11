@@ -6,7 +6,13 @@ Fase:
 <br />
 <br />
 
-<%= " _ " * @game.word.size %>
+<% @game.splitted_word.each do |letter| %>
+  <% if @game.guessed? letter %>
+    <%= " #{letter} " %>
+  <% else %>
+    <%= " _ " %>
+  <% end %>
+<% end %>
 
 <% if @game.letters.present? %>
 <br />
@@ -28,7 +34,7 @@ Take a guess:
 <br />
 
 <% @game.guesses.each do |letter| %>
-  <%= button_to letter, guess_game_path(@game, letter: letter), style: 'float: left', method: :patch, disabled: @game.guessed?(letter) %>
+  <%= button_to letter, guess_game_path(@game, letter: letter), style: 'float: left', method: :patch %>
 <% end %>
 
 <br />

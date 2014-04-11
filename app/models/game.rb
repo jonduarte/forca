@@ -4,7 +4,7 @@ class Game < ActiveRecord::Base
   end
 
   def guessed?(letter)
-    letters.include? letter
+    letters.downcase.include? letter.downcase
   end
 
   def guesses
@@ -13,6 +13,10 @@ class Game < ActiveRecord::Base
   end
 
   def guessed
-    letters.split("")
+    letters.upcase.split("")
+  end
+
+  def splitted_word
+    word.upcase.split("")
   end
 end
