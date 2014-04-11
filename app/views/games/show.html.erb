@@ -6,7 +6,7 @@ Fase:
 </div>
 
 <% if @game.loose? %>
-  You loose this game
+  Você perdeu o jogo
 <% end %>
 
 <br />
@@ -24,7 +24,7 @@ Fase:
 <br />
 <br />
 
-Already guessed:
+Letras escolhidas:
 <br />
 
 <% @game.guessed.each do |letter| %>
@@ -36,7 +36,7 @@ Already guessed:
 <br />
 <br />
 
-Take a guess:
+Escolhar uma letra:
 <br />
 
 <% @game.guesses.each do |letter| %>
@@ -46,5 +46,5 @@ Take a guess:
 <br />
 <br />
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+<%= link_to 'Editar', edit_game_path(@game) %> |
+<%= link_to 'Voltar', games_path %>

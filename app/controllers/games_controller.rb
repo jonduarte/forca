@@ -16,10 +16,10 @@ class GamesController < ApplicationController
   end
 
   def guess
-    return redirect_to @game, notice: 'You loose this game' if @game.loose?
+    return redirect_to @game, notice: 'Você perdeu o jogo' if @game.loose?
     letter = params[:letter]
     if @game.guessed? letter
-      redirect_to @game, notice: 'Letter already guessed'
+      redirect_to @game, notice: 'Você já tentou essa letra'
     else
       @game.guess(letter)
       redirect_to @game
@@ -30,7 +30,7 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
 
     if @game.save
-      redirect_to @game, notice: 'Game was successfully created.'
+      redirect_to @game, notice: 'Jogo criado.'
     else
       render action: 'new'
     end
@@ -38,7 +38,7 @@ class GamesController < ApplicationController
 
   def update
     if @game.update(game_params)
-      redirect_to @game, notice: 'Game was successfully updated.'
+      redirect_to @game, notice: 'Jogo atualizado.'
     else
       render action: 'edit'
     end

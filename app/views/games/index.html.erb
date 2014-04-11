@@ -1,10 +1,10 @@
-<h1>Listing games</h1>
+<h1>Jogos</h1>
 
 <table>
   <thead>
     <tr>
       <th>Chances</th>
-      <th>Word</th>
+      <th>Palavra</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,9 +16,9 @@
       <tr>
         <td><%= game.chances %></td>
         <td><%= game.word %></td>
-        <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', game %></td>
+        <td><%= link_to 'Editar', edit_game_path(game) %></td>
+        <td><%= link_to 'Destruir', game, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Game', new_game_path %>
+<%= link_to 'Novo jogo', new_game_path %>
