@@ -55,6 +55,6 @@ class GamesController < ApplicationController
   end
 
   def game_params
-    params.require(:game).permit(:chances, :word)
+    params.require(:game).permit(:word)
   end
 end

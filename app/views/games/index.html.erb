@@ -3,7 +3,6 @@
 <table>
   <thead>
     <tr>
-      <th>Chances</th>
       <th>Palavra</th>
       <th></th>
       <th></th>
@@ -14,7 +13,6 @@
   <tbody>
     <% @games.each do |game| %>
       <tr>
-        <td><%= game.chances %></td>
         <td><%= game.word %></td>
         <td><%= link_to 'Ver', game %></td>
         <td><%= link_to 'Editar', edit_game_path(game) %></td>
