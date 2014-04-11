@@ -1,5 +1,5 @@
 class Game < ActiveRecord::Base
-  CHANCES = 5
+  CHANCES = 7
 
   def stage
     letters.size

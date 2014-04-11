@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 Fase:
-<%= @game.stage %>
-<%= image_tag "stage_1.svg", size: "50x50" %>
+<div style="width: 50px; padding: 20px; height: 150px; float: left; border: 1px solid #ccc; margin-right: 10px; margin-bottom: 200px;">
+  <%= image_tag "stage_#{@game.stage}.svg" %>
+</div>
 
 <% if @game.loose? %>
   You loose this game
