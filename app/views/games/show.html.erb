@@ -3,6 +3,10 @@
 Fase:
 <%= @game.stage %>
 
+<% if @game.loose? %>
+  You loose this game
+<% end %>
+
 <br />
 <br />
 

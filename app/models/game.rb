@@ -1,6 +1,13 @@
 class Game < ActiveRecord::Base
+  CHANCES = 5
+
   def stage
-    chances
+    letters.size
+  end
+
+  def guess(letter)
+    self.letters = self.letters + letter
+    self.save
   end
 
   def guessed?(letter)
@@ -18,5 +25,9 @@ class Game < ActiveRecord::Base
 
   def splitted_word
     word.upcase.split("")
+  end
+
+  def loose?
+    stage >= CHANCES
   end
 end

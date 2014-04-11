@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  before_action :set_game, only: [:show, :edit, :update, :destroy]
+  before_action :set_game, only: [:show, :edit, :update, :destroy, :guess]
 
   def index
     @games = Game.all
@@ -16,6 +16,14 @@ class GamesController < ApplicationController
   end
 
   def guess
+    return redirect_to @game, notice: 'You loose this game' if @game.loose?
+    letter = params[:letter]
+    if @game.guessed? letter
+      redirect_to @game, notice: 'Letter already guessed'
+    else
+      @game.guess(letter)
+      redirect_to @game
+    end
   end
 
   def create
