@@ -2,7 +2,7 @@ class Game < ActiveRecord::Base
   CHANCES = 7
 
   def stage
-    letters.size
+    (unique(letters) - unique(word)).size
   end
 
   def guess(letter)
@@ -29,5 +29,13 @@ class Game < ActiveRecord::Base
 
   def loose?
     stage >= CHANCES
+  end
+
+  def win?
+    unique(word) == unique(letters)
+  end
+
+  def unique(str)
+    str.upcase.split("").uniq.sort
   end
 end
