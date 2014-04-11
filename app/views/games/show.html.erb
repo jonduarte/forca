@@ -1,6 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-Fase:
 <div style="width: 50px; padding: 20px; height: 150px; float: left; border: 1px solid #ccc; margin-right: 10px; margin-bottom: 200px;">
   <%= image_tag "stage_#{@game.stage}.svg" %>
 </div>
@@ -9,14 +8,18 @@ Fase:
   Você perdeu o jogo
 <% end %>
 
+<% if @game.win? %>
+  Você ganhou
+<% end %>
+
 <br />
 <br />
 
 <% @game.splitted_word.each do |letter| %>
   <% if @game.guessed? letter %>
-    <%= " #{letter} " %>
+    <u>&nbsp;<%= "#{letter}" %>&nbsp;</u>
   <% else %>
-    <%= " _ " %>
+    <u>&nbsp; &nbsp;</u>
   <% end %>
 <% end %>
 
