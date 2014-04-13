@@ -1,21 +1,6 @@
 <%= form_for(@game) do |f| %>
-  <% if @game.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@game.errors.count, "error") %>:</h2>
-
-      <ul>
-      <% @game.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+  <%= f.text_field :word, placeholder: 'Escolha a palavra' %>
+  <% if @game.errors[:word] %>
+    <span><%= @game.errors[:word].to_sentence %></span>
   <% end %>
-
-  <div class="field">
-    <%= f.label :word %><br>
-    <%= f.text_field :word %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

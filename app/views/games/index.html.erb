@@ -6,7 +6,6 @@
       <th>Palavra</th>
       <th></th>
       <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -15,7 +14,6 @@
       <tr>
         <td><%= game.word %></td>
         <td><%= link_to 'Ver', game %></td>
-        <td><%= link_to 'Editar', edit_game_path(game) %></td>
         <td><%= link_to 'Destruir', game, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
