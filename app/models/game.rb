@@ -2,6 +2,9 @@ class Game < ActiveRecord::Base
   CHANCES = 7
 
   validates_presence_of :word
+  validates_format_of :word, with: /\A[A-Za-z]+\z/
+
+  before_validation :cleanup
 
   def stage
     (unique(letters) - unique(word)).size
@@ -45,5 +48,9 @@ class Game < ActiveRecord::Base
 
   def normalize(str)
     str.upcase.split("")
+  end
+
+  def cleanup
+    self.word = ActiveSupport::Inflector.transliterate(word)
   end
 end
