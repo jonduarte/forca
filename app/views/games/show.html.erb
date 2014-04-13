@@ -16,23 +16,12 @@
   <% end %>
 <% end %>
 
-<% if @game.letters.present? %>
-  <br /><br />
-
-  Letras escolhidas: <br />
-
-  <% @game.guessed.each do |letter| %>
-    <button disabled="disabled"><%= letter %></button>
-  <% end %>
-
-<% end %>
-
 <br /> <br />
 
 Escolha uma letra: <br />
 
 <% @game.guesses.each do |letter| %>
-  <%= button_to letter, game_path(@game, letter: letter), style: 'float: left', method: :patch, disabled: @game.win? %>
+  <%= button_to letter, game_path(@game, letter: letter), style: 'float: left', method: :patch, disabled: @game.win? || @game.guessed?(letter) %>
 <% end %>
 
 <br /><br />

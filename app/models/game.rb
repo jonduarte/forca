@@ -17,7 +17,7 @@ class Game < ActiveRecord::Base
   end
 
   def guesses
-    ('A'..'Z').to_a - guessed
+    ('A'..'Z').to_a
   end
 
   def guessed
