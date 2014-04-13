@@ -21,9 +21,11 @@ class GamesController < ApplicationController
   def update
     return redirect_to @game, notice: 'Fim de jogo' if @game.lose? || @game.win?
     letter = params[:letter]
+
     if @game.guessed? letter
       redirect_to @game, notice: 'Você já tentou essa letra'
     else
+      flash[:letter] = letter
       @game.guess(letter)
       redirect_to @game
     end
