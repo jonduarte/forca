@@ -1,0 +1,5 @@
+- @game.splitted_word.each do |letter|
+  - if @game.guessed? letter
+    %span= "#{letter}"
+  - else
+    %span

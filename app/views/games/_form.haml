@@ -1,0 +1,2 @@
+= form_for(@game) do |f|
+  = f.text_field :word, placeholder: 'Escolha a palavra', class: @game.errors[:word].present? ? 'invalid' : '', autocomplete: 'off'
