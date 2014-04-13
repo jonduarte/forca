@@ -24,7 +24,7 @@
 Escolha uma letra: <br />
 
 <% @game.guesses.each do |letter| %>
-  <%= button_to letter, game_path(@game, letter: letter), style: 'float: left', method: :patch, disabled: @game.win? || @game.guessed?(letter), form: { id: "form_#{letter}" }, remote: true %>
+  <%= button_letter @game, letter %>
 <% end %>
 
 <br /><br />
