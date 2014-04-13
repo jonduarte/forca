@@ -1,9 +1,7 @@
 <div class="warning">
   <% if flash[:letter].present? && !@game.win? && !@game.lose? %>
     <%= flash[:letter]  %>
-  <% end %>
-
-  <% if notice.present? %>
+  <% elsif notice.present? %>
     <%= notice %>
   <% else %>
     <% if @game.lose? %> Você perdeu o jogo <% end %>
