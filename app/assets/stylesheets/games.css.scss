@@ -71,3 +71,14 @@ body {
       -webkit-transform: translateX(0);
   }
 }
+
+
+.warning {
+  text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #fff;
+  border-bottom: 1px dashed #fff;
+  padding: 58px 0 10px 0;
+  margin-bottom: 10px;
+}
