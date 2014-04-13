@@ -33,10 +33,12 @@ class Game < ActiveRecord::Base
   end
 
   def win?
-    unique(word) == unique(letters)
+    game_not_ended = stage < CHANCES
+    hit_all_letters = unique(letters) & unique(word) == unique(word)
+
+    game_not_ended && hit_all_letters
   end
 
-  private
   def unique(str)
     normalize(str).uniq.sort
   end
