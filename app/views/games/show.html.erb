@@ -1,19 +1,20 @@
 <div class="warning">
-  <% if @game.lose? %> Você perdeu o jogo <% end %>
-  <% if @game.win?  %> Você ganhou        <% end %>
-  <%= notice %>
+  <% if notice.present? %>
+    <%= notice %>
+  <% else %>
+    <% if @game.lose? %> Você perdeu o jogo <% end %>
+    <% if @game.win?  %> Você ganhou        <% end %>
+  <% end %>
 </div>
 
 <%= render 'stickman' %>
 
 <br /><br />
 
-<% @game.splitted_word.each do |letter| %>
-  <% if @game.guessed? letter %>
-    <u>&nbsp;<%= "#{letter}" %>&nbsp;</u>
-  <% else %>
-    <u>&nbsp; &nbsp;</u>
-  <% end %>
+<% if @game.win? || @game.lose? %>
+  <%= render 'end_game' %>
+<% else %>
+  <%= render 'word' %>
 <% end %>
 
 <br /> <br />

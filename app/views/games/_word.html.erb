@@ -1,0 +1,7 @@
+<% @game.splitted_word.each do |letter| %>
+  <% if @game.guessed? letter %>
+    <u>&nbsp;<%= "#{letter}" %>&nbsp;</u>
+  <% else %>
+    <u>&nbsp; &nbsp;</u>
+  <% end %>
+<% end %>
