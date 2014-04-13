@@ -1,3 +1,5 @@
 Jogarforca::Application.routes.draw do
-  resources :games, except: [:edit, :destroy]
+  root 'games#new'
+  get '/games' => 'games#new'
+  resources :games, except: [:index, :edit, :destroy]
 end
