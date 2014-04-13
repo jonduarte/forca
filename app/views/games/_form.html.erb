@@ -1,6 +1,3 @@
 <%= form_for(@game) do |f| %>
-  <%= f.text_field :word, placeholder: 'Escolha a palavra' %>
-  <% if @game.errors[:word] %>
-    <span><%= @game.errors[:word].to_sentence %></span>
-  <% end %>
+  <%= f.text_field :word, placeholder: 'Escolha a palavra', class: @game.errors[:word].present? ? 'invalid' : '' %>
 <% end %>
