@@ -1,7 +1,3 @@
 Jogarforca::Application.routes.draw do
-  resources :games do
-    member do
-      patch 'guess'
-    end
-  end
+  resources :games, except: [:edit, :destroy]
 end
