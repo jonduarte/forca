@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140411225921) do
+ActiveRecord::Schema.define(version: 20140414173744) do
 
   create_table "games", force: true do |t|
     t.string   "word"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "letters",    default: ""
+    t.boolean  "penalty",    default: false
   end
 
 end

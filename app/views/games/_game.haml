@@ -21,4 +21,7 @@
 - @game.guesses.each do |letter|
   = button_letter @game, letter
 
+= form_for @game do
+  = text_field_tag :letter, nil, placeholder: 'Chutar palavra', class: 'try'
+
 = link_to 'Voltar', root_path

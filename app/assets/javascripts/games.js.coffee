@@ -4,6 +4,7 @@
 
 do ->
   $(window).on 'keypress', (ev) ->
-    if (ev.which >= 65 && ev.which <= 90) || (ev.which >= 97 && ev.which <= 122)
-      letter = String.fromCharCode(ev.keyCode)
-      $("#form_#{letter.toUpperCase()}").submit()
+    unless ev.target is $('input.try')[0]
+      if (ev.which >= 65 && ev.which <= 90) || (ev.which >= 97 && ev.which <= 122)
+        letter = String.fromCharCode(ev.keyCode)
+        $("#form_#{letter.toUpperCase()}").submit()
