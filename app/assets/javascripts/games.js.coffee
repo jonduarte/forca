@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 do ->
-  $(window).on 'keydown', (ev) ->
-    if ev.which >= 65 && ev.which <= 90
+  $(window).on 'keypress', (ev) ->
+    if (ev.which >= 65 && ev.which <= 90) || (ev.which >= 97 && ev.which <= 122)
       letter = String.fromCharCode(ev.keyCode)
-      $("#form_#{letter}").submit()
+      $("#form_#{letter.toUpperCase()}").submit()
