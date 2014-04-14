@@ -32,7 +32,7 @@ class GamesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to @game }
-      format.js
+      format.js   { render layout: false }
     end
   end
 
