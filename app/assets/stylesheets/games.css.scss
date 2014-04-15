@@ -4,6 +4,7 @@
 
 body {
   background-color: #1f8dd6;
+  font-family: sans-serif;
 }
 
 #wrapper {
@@ -147,4 +148,11 @@ body {
   margin-top: 38px;
   margin-bottom: 38px;
   font-size: 15px;
+}
+
+a {
+  text-decoration: underline;
+  color: #fff;
+  text-transform: uppercase;
+  float: right;
 }
