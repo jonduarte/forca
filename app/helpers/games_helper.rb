@@ -9,6 +9,7 @@ module GamesHelper
       method: :patch,
       disabled: disabled?(game, letter),
       form: { id: "form_#{letter}" },
+      class: 'button',
       remote: true
   end
 end
