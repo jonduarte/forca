@@ -17,8 +17,6 @@
   - else
     = render 'word'
 
-%p Escolha uma letra:
-
 - @game.guesses.each do |letter|
   = button_letter @game, letter
 
