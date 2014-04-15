@@ -13,7 +13,8 @@ class Game < ActiveRecord::Base
   def guess(letter)
     if letter.size > 1
       return if letter.size != word.size
-      self.penalty = true unless unique(letters) & unique(word) == unique(word)
+
+      self.penalty = true unless unique(letter) & unique(word) == unique(word)
     end
 
     self.letters = self.letters + letter
