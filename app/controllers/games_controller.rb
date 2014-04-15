@@ -19,7 +19,7 @@ class GamesController < ApplicationController
   end
 
   def update
-    letter = params[:letter]
+    letter = params[:letter].to_s
 
     if @game.lose? || @game.win?
       flash[:notice] = 'Fim de jogo'
