@@ -11,10 +11,11 @@
 
 = render 'stickman'
 
-- if @game.win? || @game.lose?
-  = render 'end_game'
-- else
-  = render 'word'
+.hold-letters
+  - if @game.win? || @game.lose?
+    = render 'end_game'
+  - else
+    = render 'word'
 
 %p Escolha uma letra:
 
