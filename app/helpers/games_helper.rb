@@ -9,7 +9,11 @@ module GamesHelper
       method: :patch,
       disabled: disabled?(game, letter),
       form: { id: "form_#{letter}" },
-      class: 'button',
+      class: "button #{wrong_word_class(game, letter)}",
       remote: true
+  end
+
+  def wrong_word_class(game, letter)
+    "wrong" unless game.unique(game.word).include? letter
   end
 end
