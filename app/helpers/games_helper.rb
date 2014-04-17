@@ -14,6 +14,6 @@ module GamesHelper
   end
 
   def wrong_word_class(game, letter)
-    "wrong" unless game.unique(game.word).include? letter
+    "wrong" if !game.unique(game.word).include?(letter) && game.guessed?(letter)
   end
 end
