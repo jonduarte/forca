@@ -21,7 +21,7 @@ class GamesController < ApplicationController
   def update
     letter = params[:letter].to_s
 
-    if @game.lose? || @game.win?
+    if @game.ended?
       flash[:notice] = 'Fim de jogo'
     elsif @game.guessed? letter
       flash[:notice] = 'Você já tentou essa letra'
