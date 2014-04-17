@@ -22,7 +22,7 @@ class Game < ActiveRecord::Base
   end
 
   def guessed?(letter)
-    letters.downcase.include? letter.downcase
+    guessed.include? letter.upcase
   end
 
   def guessed
