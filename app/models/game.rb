@@ -37,6 +37,10 @@ class Game < ActiveRecord::Base
     normalize(word)
   end
 
+  def ended?
+    lose? || win?
+  end
+
   def lose?
     stage >= CHANCES || penalty?
   end

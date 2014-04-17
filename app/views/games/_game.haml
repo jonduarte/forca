@@ -12,7 +12,7 @@
 = render 'stickman'
 
 .hold-letters
-  - if @game.win? || @game.lose?
+  - if @game.ended?
     = render 'end_game'
   - else
     = render 'word'
@@ -21,6 +21,6 @@
   = button_letter @game, letter
 
 = form_for @game do
-  = text_field_tag :letter, nil, placeholder: 'Chutar palavra', class: 'try game_word', autocomplete: 'off'
+  = text_field_tag :letter, nil, placeholder: 'Chutar palavra', class: 'try game_word', autocomplete: 'off', disabled: @game.ended?
 
 = link_to 'Voltar', root_path
