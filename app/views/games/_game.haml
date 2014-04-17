@@ -17,7 +17,7 @@
   - else
     = render 'word'
 
-- @game.guesses.each do |letter|
+- ('A'..'Z').to_a.each do |letter|
   = button_letter @game, letter
 
 = form_for @game do

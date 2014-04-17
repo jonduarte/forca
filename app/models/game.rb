@@ -25,10 +25,6 @@ class Game < ActiveRecord::Base
     letters.downcase.include? letter.downcase
   end
 
-  def guesses
-    ('A'..'Z').to_a
-  end
-
   def guessed
     normalize(letters)
   end
