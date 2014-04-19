@@ -6,6 +6,12 @@ class Game < ActiveRecord::Base
 
   before_validation :cleanup
 
+  def self.machine!
+    word = Game.order('random()').limit(1).first.word
+    self.create! word: word
+  end
+
+
   def stage
     (unique(letters) - unique(word)).size
   end

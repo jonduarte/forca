@@ -1,2 +1,4 @@
 = form_for(@game) do |f|
   = f.text_field :word, placeholder: 'Escolha a palavra', class: @game.errors[:word].present? ? 'game_word invalid' : 'game_word', autocomplete: 'off'
+
+= button_to "Jogar contra a máquina", machine_games_path

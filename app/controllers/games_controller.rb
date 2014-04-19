@@ -1,6 +1,11 @@
 class GamesController < ApplicationController
   before_action :set_game, only: [:show, :update]
 
+  def machine
+    @game = Game.machine!
+    redirect_to @game, notice: 'Jogo criado'
+  end
+
   def show
   end
 
