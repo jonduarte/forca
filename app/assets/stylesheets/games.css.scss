@@ -12,12 +12,18 @@ body {
   margin: 0 auto;
 }
 
-.new_game {
-  width: 600px;
-  margin: 25% auto;
+#new_game {
+  margin-top: 150px;
 }
 
-.game_word {
+.new_game {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+
+.input {
   width: 80%;
   padding: 2% 10%;
   text-align: center;
@@ -28,6 +34,14 @@ body {
   background-color: #1f8dd6;
   outline: none;
   color: #fff;
+
+  &.btn {
+    width: 101%;
+    background: #fff;
+    color: #162CD5;
+    border: 2px solid #162CD5;
+    cursor: pointer
+  }
 
   &.invalid {
       outline-color: red;
