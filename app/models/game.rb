@@ -7,7 +7,7 @@ class Game < ActiveRecord::Base
   before_validation :cleanup
 
   def self.machine!
-    word = Game.order('random()').limit(1).first.word
+    word = order('random()').limit(1).pluck(:word).first
     self.create! word: word
   end
 
